@@ -1,0 +1,93 @@
+body,html{
+    height: 100%;
+    margin: 0;
+    background: #747474;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  
+    
+}
+.n{
+    
+    text-align: center;
+
+    margin: 70px;
+    background-color: rgb(245, 244, 227);
+    max-width:600px;
+    width: 350px;
+    margin-left: 790px;
+    margin-right: 800px;
+}
+
+.cabecalho{
+    background-color: rgb(18, 112, 76);
+    
+    
+}
+
+.enviar{
+    margin-top: 500px;
+    align-items: center;
+    display: flex;
+    padding:10px;
+    background-color: rgb(235, 225, 214);
+    text-align: center;
+    
+}
+
+button{
+    margin-left: 10px;
+    border-radius: 40px;
+    background-color: #4CAF50; 
+    border: none; 
+    color: white; 
+    padding: 10px 10px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px;
+    margin: 4px 2px; 
+    cursor: pointer; 
+    border-radius: 8px; 
+    transition-duration: 0.4s; 
+    margin-left: 30px;
+    margin-right:15px ;
+}
+
+button:hover{
+    background-color: #3d683f; 
+  color: white; 
+}
+
+
+input{
+    border-radius: 40px;
+    border: none;
+    margin-left: 20px;
+    padding: 5px; 
+    font-size: 13px; 
+    border-radius: 5px; 
+    border: 2px solid #ccc; 
+    transition: border-color 0.3s; 
+    width: 300px; 
+    margin-right: 15px;
+
+}
+
+.sender1{
+    margin: 10px;
+    background-color: rgb(166, 223, 154);
+    padding: 10px;
+    border-radius: 6px;
+    text-align: right;
+}
+
+.sender2{
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 6px;
+    text-align: left;
+
+}

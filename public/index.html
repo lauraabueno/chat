@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bate papo Node.JS e socket.io</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="n">
+
+        <form>
+            <div class="cabecalho">
+            <br>
+            <img style="width: 70px;" src="https://cdn-icons-png.flaticon.com/512/17/17004.png">
+            <input type="text" id="nome" placeholder="Nome de usuário"><br><br></div>
+            
+    <div class="mensagens">
+        <ul id="mensagens"></ul>
+    </div>
+            <div class="enviar"><input type="text" id="mensagem" placeholder="Sua mensagem"><br><br>
+            <button>Enviar</button></div>
+        </form>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        
+        const socket = io();
+        const nomeInput = document.getElementById('nome');
+        const mensagemInput = document.getElementById('mensagem');
+        const mensagens = document.getElementById('mensagens');
+
+      
+        document.querySelector('form').addEventListener('submit', event => {
+            event.preventDefault();
+            const nome = nomeInput.value;
+            const mensagem = mensagemInput.value;
+            nome.trim() && mensagem.trim() && socket.emit('chat message', {nome, mensagem});
+            mensagemInput.value = '';
+            nomeInput.disabled = true;
+        });
+
+        socket.on('chat message', dados => {
+            const lista = document.createElement('li');
+            lista.textContent = `${dados.nome}: ${dados.mensagem}`;
+            lista.classList.add(dados.nome === nomeInput.value ? 'sender1' : 'sender2');
+            
+            mensagens.appendChild(lista);
+        });
+    </script>
+</body>
+</html>
